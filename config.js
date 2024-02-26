@@ -2,9 +2,9 @@
 let apiURL;
 
 if (window.location.hostname === "localhost") {
-    apiURL = "http://localhost:3000";
+    apiURL = "http://localhost:3000/word";
 } else {
-    apiURL = "https://french-word-game-api.onrender.com";
+    apiURL = "https://french-word-game-api.onrender.com/word";
 }
 
 // Make the API URL globally available
