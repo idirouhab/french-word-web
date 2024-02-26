@@ -47,7 +47,7 @@ function submitGuess() {
         return;
     }
 
-    fetch(`${window.apiURL}/word/translation/${currentVerbId}`)
+    fetch(`${window.apiURL}/translation/${currentVerbId}`)
         .then(response => response.json())
         .then(data => {
             const correctTranslation = data.english;
@@ -75,7 +75,7 @@ function submitGuess() {
 
 function showAnswerAndNext() {
     if (currentVerbId !== null) {
-        fetch(`${window.apiURL}/word/translation/${currentVerbId}`)
+        fetch(`${window.apiURL}/translation/${currentVerbId}`)
             .then(response => response.json())
             .then(data => {
                 const correctTranslation = data.english; // Adjust based on your API response
