@@ -27,7 +27,7 @@ function updateStrikes() {
 
 
 function fetchRandomWord() {
-    fetch(`${window.apiURL}/random-word`)
+    fetch(`${window.apiURL}/random`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('frenchVerb').textContent = data.word;
