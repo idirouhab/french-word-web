@@ -27,7 +27,7 @@ function updateStrikes() {
 
 
 function fetchRandomWord() {
-    fetch('http://localhost:3000/random-word')
+    fetch(`${window.apiURL}/random-word`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('frenchVerb').textContent = data.word;
@@ -47,7 +47,7 @@ function submitGuess() {
         return;
     }
 
-    fetch(`http://localhost:3000/word/translation/${currentVerbId}`)
+    fetch(`${window.apiURL}/word/translation/${currentVerbId}`)
         .then(response => response.json())
         .then(data => {
             const correctTranslation = data.english;
@@ -75,7 +75,7 @@ function submitGuess() {
 
 function showAnswerAndNext() {
     if (currentVerbId !== null) {
-        fetch(`http://localhost:3000/word/translation/${currentVerbId}`)
+        fetch(`${window.apiURL}/word/translation/${currentVerbId}`)
             .then(response => response.json())
             .then(data => {
                 const correctTranslation = data.english; // Adjust based on your API response
